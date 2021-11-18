@@ -17,7 +17,7 @@ const signingin = () => {
       />
 
       <header className="absolute left-16 top-7">
-        <Image src={"/dnnlogo.png"} width={180} height={80} />
+        <Image src={"/dnnlogo.png"} width={180} height={80} alt="logo" />
       </header>
 
       {session ? (
@@ -41,7 +41,7 @@ const signingin = () => {
             scratched the movies again.
           </h1>
 
-          <img src="./cat.png" alt="Cat" />
+          <Image src={"/cat.png"} alt="Cat" width={250} height={250} />
 
           <button
             className="bg-custom-red w-80 rounded py-3 font-bold tracking-wider mt-5"

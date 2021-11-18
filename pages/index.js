@@ -39,10 +39,10 @@ const Home = () => {
 
       <section className="min-h-screen bg-heroimg bg-center bg-no-repeat bg-cover flex flex-col items-center">
         <header className="flex mt-7 mb-32 w-11/12 justify-between items-center">
-          <Image src={"/dnnlogo.png"} width={180} height={80} />
+          <Image src={"/dnnlogo.png"} width={180} height={80} alt="logo" />
           <button
             className="text-lg cursor-pointer bg-custom-red px-4 py-1 rounded-sm"
-            onClick={() => router.push("/signin")}
+            onClick={() => router.push("/signingin")}
           >
             Sign In
           </button>
@@ -75,10 +75,10 @@ const Home = () => {
             }
           >
             {okay ? (
-              <img
-                src="/loading.gif"
+              <Image
+                src={"/loading.gif"}
                 alt="loading circle"
-                width="40"
+                width={40}
                 className="mx-16"
               />
             ) : (
@@ -105,11 +105,21 @@ const Home = () => {
           </h2>
         </div>
 
-        <Image src={"/dnnff.jpg"} width={550} height={350} />
+        <Image
+          src={"/dnnff.jpg"}
+          width={550}
+          height={350}
+          alt="first feature"
+        />
       </section>
 
       <section className="flex justify-center items-center py-20">
-        <Image src={"/dnnsf.jpg"} width={350} height={350} />
+        <Image
+          src={"/dnnsf.jpg"}
+          width={350}
+          height={350}
+          alt="second feature"
+        />
 
         <div className="w-2/5 ml-20">
           <h1 className="text-5xl font-bold tracking-wider mb-5">
@@ -132,11 +142,21 @@ const Home = () => {
           </h2>
         </div>
 
-        <Image src={"/dnntf.png"} width={550} height={500} />
+        <Image
+          src={"/dnntf.png"}
+          width={550}
+          height={500}
+          alt="third feature"
+        />
       </section>
 
       <section className="flex justify-center items-center py-16">
-        <Image src={"/dnnfrf.png"} width={500} height={370} />
+        <Image
+          src={"/dnnfrf.png"}
+          width={500}
+          height={370}
+          alt="fourth feature"
+        />
 
         <div className="w-2/5 ml-10">
           <h1 className="text-5xl font-bold tracking-wider mb-5">
@@ -355,10 +375,10 @@ const Home = () => {
             }
           >
             {okay ? (
-              <img
-                src="/loading.gif"
+              <Image
+                src={"/loading.gif"}
                 alt="loading circle"
-                width="40"
+                width={40}
                 className="mx-16"
               />
             ) : (

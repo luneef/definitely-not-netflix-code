@@ -1,3 +1,3 @@
-### Definitely Not Hostinger
+### Definitely Not Netflix
 
-Website created using NextJS & Tailwind CSS
+Landing & Sign In/Up Page created using NextJS & Tailwind CSS.
