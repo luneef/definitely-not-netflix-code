@@ -1,16 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import validator from "validator";
 import Image from "next/image";
 import { BsChevronRight, BsPlusLg } from "react-icons/bs";
+import TheHead from "../components/TheHead";
 
 const Home = () => {
+  const router = useRouter();
   const [faq, setFaq] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [okay, setOkay] = useState(false);
+
+  const validateEmail = (e) => {
+    var email = e.target.value;
+
+    if (validator.isEmail(email)) {
+      setEmailError("Okay");
+    } else {
+      setEmailError("Please enter a valid email address");
+    }
+  };
+
+  useEffect(() => {
+    if (okay) {
+      const timer = setTimeout(() => {
+        router.push("https://www.netflix.com/");
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+
+    // eslint-disable-next-line
+  }, [okay]);
 
   return (
     <div className="font-body text-white bg-black divide-custom-gray divide-y-8">
+      <TheHead tabtitle="Definitely Not Netflix - Watch TV Shows, Movies, Series" />
+
       <section className="min-h-screen bg-heroimg bg-center bg-no-repeat bg-cover flex flex-col items-center">
         <header className="flex mt-7 mb-32 w-11/12 justify-between items-center">
           <Image src={"/dnnlogo.png"} width={180} height={80} />
-          <button className="text-lg cursor-pointer bg-red-600 px-4 py-1 rounded-sm">
+          <button
+            className="text-lg cursor-pointer bg-custom-red px-4 py-1 rounded-sm"
+            onClick={() => router.push("/signin")}
+          >
             Sign In
           </button>
         </header>
@@ -22,18 +55,42 @@ const Home = () => {
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
 
-        <div className="flex w-full justify-center">
+        <div className="flex w-full justify-center relative">
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Email address"
             className="w-1/3 h-16 px-3 text-black outline-none rounded-sm"
+            onChange={(e) => validateEmail(e)}
           />
-          <button className="flex items-center cursor-pointer bg-red-600 text-3xl rounded-sm px-7 border">
-            <p>Get Started</p>
-            <BsChevronRight className="w-6 h-6 ml-2" />
+          <button
+            className="flex items-center justify-center cursor-pointer bg-custom-red text-3xl rounded-sm px-7 border "
+            onClick={() =>
+              emailError
+                ? emailError === "Okay"
+                  ? setOkay(true)
+                  : ""
+                : setEmailError("Email is required!")
+            }
+          >
+            {okay ? (
+              <img
+                src="/loading.gif"
+                alt="loading circle"
+                width="40"
+                className="mx-16"
+              />
+            ) : (
+              <div className="flex items-center justify-center">
+                <p>Get Started</p>
+                <BsChevronRight className="w-6 h-6 ml-2" />
+              </div>
+            )}
           </button>
+          <p className="text-base text-yellow-500 absolute -bottom-7 left-1/4 ml-2">
+            {emailError}
+          </p>
         </div>
       </section>
 
@@ -244,7 +301,7 @@ const Home = () => {
         </div>
 
         <button
-          className="bg-custom-gray flex justify-between items-center w-3/6 px-9 py-4 mb-16"
+          className="bg-custom-gray flex justify-between items-center w-3/6 px-9 py-4 mb-2"
           onClick={() => {
             faq === "faq6" ? setFaq("") : setFaq("faq6");
           }}
@@ -274,22 +331,46 @@ const Home = () => {
           </p>
         </div>
 
-        <h3 className="text-xl mb-4">
+        <h3 className="text-xl mb-4 mt-16">
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
 
-        <div className="flex w-full justify-center">
+        <div className="flex w-full justify-center relative">
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Email address"
             className="w-1/3 h-16 px-3 text-black outline-none rounded-sm"
+            onChange={(e) => validateEmail(e)}
           />
-          <button className="flex items-center cursor-pointer bg-red-600 text-3xl rounded-sm px-7 border">
-            <p>Get Started</p>
-            <BsChevronRight className="w-6 h-6 ml-2" />
+          <button
+            className="flex items-center justify-center cursor-pointer bg-custom-red text-3xl rounded-sm px-7 border "
+            onClick={() =>
+              emailError
+                ? emailError === "Okay"
+                  ? setOkay(true)
+                  : ""
+                : setEmailError("Email is required!")
+            }
+          >
+            {okay ? (
+              <img
+                src="/loading.gif"
+                alt="loading circle"
+                width="40"
+                className="mx-16"
+              />
+            ) : (
+              <div className="flex items-center justify-center">
+                <p>Get Started</p>
+                <BsChevronRight className="w-6 h-6 ml-2" />
+              </div>
+            )}
           </button>
+          <p className="text-base text-yellow-500 absolute -bottom-7 left-1/4 ml-2">
+            {emailError}
+          </p>
         </div>
       </section>
 
