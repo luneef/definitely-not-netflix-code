@@ -17,6 +17,14 @@ module.exports = {
         "custom-red": "#E50914",
       },
     },
+
+    screens: {
+      "2xl": { max: "1538px" },
+      xl: { max: "1282px" },
+      lg: { max: "1026px" },
+      md: { max: "770px" },
+      sm: { max: "642px" },
+    },
   },
   variants: {
     extend: {},

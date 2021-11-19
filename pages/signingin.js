@@ -16,7 +16,7 @@ const Signingin = () => {
         }
       />
 
-      <header className="absolute left-16 top-7">
+      <header className="absolute left-16 top-7 md:left-5">
         <Image src={"/dnnlogo.png"} width={180} height={80} alt="logo" />
       </header>
 
@@ -34,7 +34,7 @@ const Signingin = () => {
       )}
 
       {session ? (
-        <section className="bg-black p-16 bg-opacity-80 flex flex-col items-center">
+        <section className="bg-black p-16 bg-opacity-80 flex flex-col items-center md:p-5">
           <h1 className="text-center text-2xl font-bold tracking-wider">
             Oops, looks like the internet cat
             <br />
