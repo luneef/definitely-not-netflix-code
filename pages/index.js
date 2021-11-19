@@ -200,7 +200,7 @@ const Home = () => {
             <br />
             <br />
             You can watch as much as you want, whenever you want without a
-            single commercial – all for one low monthly price. There's always
+            single commercial – all for one low monthly price. Theres always
             something new to discover and new TV shows and movies are added
             every week!
           </p>
@@ -260,7 +260,7 @@ const Home = () => {
             <br />
             <br />
             You can also download your favorite shows with the iOS, Android, or
-            Windows 10 app. Use downloads to watch while you're on the go and
+            Windows 10 app. Use downloads to watch while youre on the go and
             without an internet connection. Take Netflix with you anywhere.
           </p>
         </div>
