@@ -75,12 +75,14 @@ const Home = () => {
             }
           >
             {okay ? (
-              <Image
-                src={"/loading.gif"}
-                alt="loading circle"
-                width={40}
-                className="mx-16"
-              />
+              <div className="mx-16">
+                <Image
+                  src={"/loading.gif"}
+                  alt="loading circle"
+                  width={40}
+                  height={40}
+                />
+              </div>
             ) : (
               <div className="flex items-center justify-center">
                 <p>Get Started</p>
@@ -375,12 +377,14 @@ const Home = () => {
             }
           >
             {okay ? (
-              <Image
-                src={"/loading.gif"}
-                alt="loading circle"
-                width={40}
-                className="mx-16"
-              />
+              <div className="mx-16">
+                <Image
+                  src={"/loading.gif"}
+                  alt="loading circle"
+                  width={40}
+                  height={40}
+                />
+              </div>
             ) : (
               <div className="flex items-center justify-center">
                 <p>Get Started</p>
