@@ -3,7 +3,7 @@ import Link from "next/link";
 import TheHead from "../components/TheHead";
 import { useSession, signIn, signOut } from "next-auth/client";
 
-const signingin = () => {
+const Signingin = () => {
   const [session] = useSession();
 
   return (
@@ -74,4 +74,4 @@ const signingin = () => {
   );
 };
 
-export default signingin;
+export default Signingin;
